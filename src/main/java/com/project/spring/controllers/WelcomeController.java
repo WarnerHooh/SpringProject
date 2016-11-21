@@ -1,7 +1,6 @@
 package com.project.spring.controllers;
 
-import com.project.spring.services.WelcomeService;
-import org.apache.commons.logging.LogFactory;
+import com.project.spring.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +16,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class WelcomeController {
 
     private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-    private final WelcomeService welcomeService;
+    private final UserService userService;
 
     @Autowired
-    public WelcomeController(WelcomeService welcomeService) {
-        this.welcomeService = welcomeService;
+    public WelcomeController(UserService userService) {
+        this.userService = userService;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index() {
         LOGGER.debug("get index");
-        System.out.println(welcomeService.getUserById(5));
         return "index";
     }
 

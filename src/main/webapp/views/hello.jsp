@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: hjhu
@@ -6,12 +7,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="ctx" value="${pageContext.request.contextPath }"></c:set>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-    <h1>Hello ${name}</h1>
-    <img src="resources/icon.png">
+    <h1>Hello ${name}, ${age}</h1>
+    <img src="${ctx}/resources/icon.png">
 </body>
 </html>
